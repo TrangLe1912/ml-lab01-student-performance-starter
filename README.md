@@ -38,7 +38,7 @@ Notebook chính:
 Lab01_StudentPerformance.ipynb
 ```
 
-Dataset:
+Dataset sau khi tải:
 
 ```text
 data/StudentPerformanceFactors.csv
@@ -65,6 +65,22 @@ conda create --name machine_learning python=3.12
 conda activate machine_learning
 pip install -r requirements.txt
 ```
+
+### Tải dataset
+
+Sau khi clone repo, chạy một lần:
+
+```bash
+python scripts/download_data.py
+```
+
+Script sẽ tạo:
+
+```text
+data/StudentPerformanceFactors.csv
+```
+
+GitHub Actions cũng tự động thực hiện bước tải dataset khi kiểm tra bài.
 
 Khởi động Jupyter:
 
@@ -117,9 +133,9 @@ git push
 
 Mỗi lần push lên `main`, GitHub Actions sẽ:
 
-1. kiểm tra các file bắt buộc;
-2. cài môi trường;
-3. kiểm tra notebook hợp lệ;
+1. cài môi trường;
+2. tải dataset;
+3. kiểm tra các file bắt buộc và cấu trúc notebook;
 4. chạy notebook trong môi trường sạch;
 5. cảnh báo nếu vẫn còn các placeholder chưa hoàn thiện.
 
