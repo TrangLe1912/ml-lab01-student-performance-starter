@@ -23,6 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Download dataset
+        run: |
+          python scripts/download_data.py
+
       - name: Check required files and notebook structure
         run: |
           python tests/check_lab01.py
